@@ -1,0 +1,58 @@
+body.chooser {
+  background: var(--c-grey-950);
+  color: var(--c-white);
+  min-height: 100vh;
+  display: flex; align-items: center;
+  padding: 60px 0;
+}
+.chooser-header { text-align: center; max-width: 640px; margin: 0 auto 56px; }
+.chooser-header .eyebrow {
+  color: var(--c-yellow-500); font-weight: 700; font-size: 13px; text-transform: uppercase;
+  letter-spacing: 0.14em; margin-bottom: 14px; display: block;
+}
+.chooser-header h1 { font-size: clamp(28px, 4vw, 42px); margin-bottom: 14px; }
+.chooser-header p { color: var(--c-grey-400); font-size: 16.5px; }
+
+.concept-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 28px; }
+.concept-card {
+  background: var(--c-grey-900); border: 1px solid var(--c-grey-800); border-radius: 14px;
+  overflow: hidden; display: flex; flex-direction: column; transition: transform .2s, border-color .2s;
+}
+.concept-card:hover { transform: translateY(-4px); border-color: var(--c-yellow-500); }
+.concept-preview {
+  height: 160px; position: relative; overflow: hidden;
+  display: flex; align-items: center; justify-content: center;
+}
+.concept-preview.p1 { background: linear-gradient(160deg, #16181c, #2c3036); }
+.concept-preview.p2 { background: linear-gradient(160deg, #f8f9fa, #dde0e3); }
+.concept-preview.p3 { background: #f8f9fa; background-image: linear-gradient(#dde0e3 1px, transparent 1px), linear-gradient(90deg, #dde0e3 1px, transparent 1px); background-size: 20px 20px; }
+.concept-preview .swoosh {
+  position: absolute; right: -20px; top: -20px; width: 120px; height: 120px;
+  background: var(--c-yellow-500); border-radius: 50%; opacity: .85; filter: blur(0px);
+}
+.concept-preview .tagchip {
+  position: relative; z-index: 2; font-family: var(--font-display); font-weight: 700;
+  font-size: 13px; letter-spacing: 0.08em; text-transform: uppercase;
+  padding: 8px 16px; border-radius: 999px;
+}
+.concept-preview.p1 .tagchip { background: rgba(0,0,0,0.4); color: var(--c-yellow-500); border: 1px solid var(--c-yellow-500); }
+.concept-preview.p2 .tagchip { background: var(--c-grey-900); color: var(--c-yellow-500); }
+.concept-preview.p3 .tagchip { background: var(--c-grey-900); color: var(--c-yellow-500); font-family: 'JetBrains Mono', monospace; }
+
+.concept-body { padding: 26px 26px 28px; display: flex; flex-direction: column; flex: 1; }
+.concept-body .num { color: var(--c-yellow-500); font-family: var(--font-display); font-weight: 700; font-size: 13px; margin-bottom: 10px; }
+.concept-body h2 { font-size: 20px; margin-bottom: 10px; }
+.concept-body p { color: var(--c-grey-400); font-size: 14.5px; flex: 1; }
+.concept-body a.btn {
+  margin-top: 18px; display: inline-flex; align-items: center; justify-content: center;
+  padding: 12px 20px; background: var(--c-yellow-500); color: var(--c-grey-950);
+  font-weight: 700; font-size: 13.5px; text-transform: uppercase; letter-spacing: 0.06em;
+  border-radius: 2px; transition: background .2s;
+}
+.concept-body a.btn:hover { background: var(--c-yellow-400); }
+
+.chooser-footer { text-align: center; margin-top: 48px; color: var(--c-grey-500); font-size: 13.5px; }
+
+@media (max-width: 900px) {
+  .concept-grid { grid-template-columns: 1fr; }
+}
